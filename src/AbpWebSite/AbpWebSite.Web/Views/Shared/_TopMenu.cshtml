@@ -1,0 +1,9 @@
+﻿<li class="@(ViewBag.CurrentPage == "Home" ? "active" : "")">
+    <a href="@Url.Action("Index", "Home")">Home</a>
+</li>
+<li class="@(ViewBag.CurrentPage == "Documents" ? "active" : "")">
+    <a href="@Url.Action("Index", "Documents")">Documents</a>
+</li>
+<li class="@(ViewBag.CurrentPage == "About" ? "active" : "")">
+    <a href="@Url.Action("Index", "About")">About</a>
+</li>
