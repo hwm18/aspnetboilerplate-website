@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace AbpWebSite.Web.Controllers
 {
-    public class DocumentsController : Controller
+    public class DocumentsController : AbpWebSiteControllerBase
     {
         //
         // GET: /Documents/
