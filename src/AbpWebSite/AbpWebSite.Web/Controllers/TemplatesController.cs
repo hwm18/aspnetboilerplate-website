@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Abp.Web.Models;
+using AbpWebSite.Templates;
 
 namespace AbpWebSite.Web.Controllers
 {
@@ -18,9 +16,9 @@ namespace AbpWebSite.Web.Controllers
         {
             try
             {
-                var projectCreator = new ProjectCreator();
-                var fileBytes = projectCreator.Create("SinglePageApplication", "MySpaProject", projectName);
-                return File(fileBytes, "application/x-zip");
+                var projectCreator = new ProjectCreator(Server.MapPath("~/"));
+                var fileBytes = projectCreator.Create("MySpaProject", projectName);
+                return File(fileBytes, "application/zip", projectName + ".zip");
             }
             catch (Exception)
             {
@@ -32,9 +30,9 @@ namespace AbpWebSite.Web.Controllers
         {
             try
             {
-                var projectCreator = new ProjectCreator();
-                var fileBytes = projectCreator.Create("MultiPageApplication", "MyMvcProject", projectName);
-                return File(fileBytes, "application/x-zip");
+                var projectCreator = new ProjectCreator(Server.MapPath("~/"));
+                var fileBytes = projectCreator.Create("MyMvcProject", projectName);
+                return File(fileBytes, "application/zip", projectName + ".zip");
             }
             catch (Exception)
             {

@@ -53,6 +53,9 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\packages\Castle.Windsor.3.2.1\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\packages\DotNetZip.1.9.2\lib\net20\Ionic.Zip.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections.Immutable">
       <HintPath>..\packages\Microsoft.Bcl.Immutable.1.0.30\lib\portable-net45+win8+wp8\System.Collections.Immutable.dll</HintPath>
@@ -68,6 +71,9 @@
   <ItemGroup>
     <Compile Include="AbpWebSiteApplicationModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\ProjectCreator.cs" />
+    <Compile Include="Templates\RandomCodeGenerator.cs" />
+    <Compile Include="Templates\SolutionRenamer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

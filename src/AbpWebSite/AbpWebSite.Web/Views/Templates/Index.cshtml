@@ -11,10 +11,10 @@
     <div class="col-md-6">
         <h3>Single-Page Application Template</h3>
         <p>Develop your SPA using DurandalJs, KnockoutJs, jQuery and RequireJs in client side. It's suitable for backend admin panels and applications those require login to use.</p>
-        <form role="form">
+        <form role="form" method="GET" action="@Url.Action("CreateSpaProject")">
             <div class="form-group">
                 <label for="SpaProjectName">Enter your solution's name (without spaces)</label>
-                <input type="email" class="form-control" id="SpaProjectName" name="ProjectName" placeholder="MyProjectName">
+                <input type="text" class="form-control" id="SpaProjectName" name="ProjectName" placeholder="MyProjectName">
             </div>
             <button type="submit" class="btn btn-primary">Create my application!</button>
         </form>
@@ -22,5 +22,12 @@
     <div class="col-md-6">
         <h3>Multi-Page Application Template</h3>
         <p>Develop web sites. It's good if you'll use SEO techniques and your web site will be investigable by search engines.</p>
+        <form role="form" method="GET" action="@Url.Action("CreateMpaProject")">
+            <div class="form-group">
+                <label for="MpaProjectName">Enter your solution's name (without spaces)</label>
+                <input type="text" class="form-control" id="MpaProjectName" name="ProjectName" placeholder="MyProjectName">
+            </div>
+            <button type="submit" class="btn btn-primary">Create my application!</button>
+        </form>
     </div>
 </div>

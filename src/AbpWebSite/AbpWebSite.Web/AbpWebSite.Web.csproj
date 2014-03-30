@@ -253,6 +253,7 @@
     <Content Include="Localization\AbpWeb\AbpWeb.tr.xml" />
     <Content Include="Localization\AbpWeb\AbpWeb.xml" />
     <Content Include="Localization\AbpWebSite\AbpWebSite.xml" />
+    <Content Include="ProjectTemplates_Downloads\SolutionRenamer.exe" />
     <Content Include="README.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -264,6 +265,8 @@
     <Content Include="log4net.config" />
     <Content Include="Abp\Framework\styles\abp.less" />
     <Content Include="Abp\Framework\styles\abp.css.map" />
+    <Content Include="ProjectTemplates\MyMvcProject.zip" />
+    <Content Include="ProjectTemplates\MySpaProject.zip" />
     <None Include="Properties\PublishProfiles\Publish_Release.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
@@ -309,7 +312,6 @@
     <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AbpWebSiteControllerBase.cs" />
-    <Compile Include="Controllers\ProjectCreator.cs" />
     <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -368,7 +370,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61814</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61754/</IISUrl>
+          <IISUrl>http://localhost:61755/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
