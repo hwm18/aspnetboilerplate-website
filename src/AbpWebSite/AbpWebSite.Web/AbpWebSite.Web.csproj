@@ -250,6 +250,18 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\docs\introwithsts\calling_webapi_ajax.png" />
+    <Content Include="images\docs\introwithsts\create_template.png" />
+    <Content Include="images\docs\introwithsts\db_after_migration.png" />
+    <Content Include="images\docs\introwithsts\empty_db.png" />
+    <Content Include="images\docs\introwithsts\first_run.png" />
+    <Content Include="images\docs\introwithsts\localization_files.png" />
+    <Content Include="images\docs\introwithsts\migration.png" />
+    <Content Include="images\docs\introwithsts\project_files.png" />
+    <Content Include="images\docs\introwithsts\repository_interface.png" />
+    <Content Include="images\docs\introwithsts\sts_spa_files.png" />
+    <Content Include="images\docs\introwithsts\tasksystem.png" />
+    <Content Include="images\docs\introwithsts\template_spa_files.png" />
     <Content Include="Localization\AbpWeb\AbpWeb.tr.xml" />
     <Content Include="Localization\AbpWeb\AbpWeb.xml" />
     <Content Include="Localization\AbpWebSite\AbpWebSite.xml" />
@@ -331,6 +343,7 @@
     <Content Include="Views\Documents\Index.cshtml" />
     <Content Include="Views\Templates\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Documents\IntroductionWithSimpleTaskSystem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
