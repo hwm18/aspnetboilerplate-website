@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbpWebSiteCoreModule.cs" />
+    <Compile Include="Logging\ISiteUsageInfoRepository.cs" />
+    <Compile Include="Logging\SiteUsageInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

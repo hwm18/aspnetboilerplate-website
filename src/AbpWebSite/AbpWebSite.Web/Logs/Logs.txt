@@ -515,3 +515,76 @@ DEBUG 2014-04-13 15:57:25,600 [1    ] Abp.Modules.AbpModuleLoader              -
 DEBUG 2014-04-13 15:57:25,600 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteWebApiModule, AbpWebSite.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-04-13 15:57:25,628 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.Web.AbpWebSiteWebModule, AbpWebSite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 DEBUG 2014-04-13 15:57:26,000 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-04-30 20:54:31,351 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-04-30 20:54:39,507 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:39,701 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:39,702 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,112 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,112 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteCoreModule, AbpWebSite.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,116 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteApplicationModule, AbpWebSite.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,117 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteNHibernateModule, AbpWebSite.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,117 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteWebApiModule, AbpWebSite.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,171 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.Web.AbpWebSiteWebModule, AbpWebSite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:54:40,470 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+ERROR 2014-04-30 20:54:55,954 [10   ] Site.Web.Controllers.TemplatesController - No persister for: AbpWebSite.Logging.SiteUsageInfo
+NHibernate.MappingException: No persister for: AbpWebSite.Logging.SiteUsageInfo
+   at NHibernate.Impl.SessionFactoryImpl.GetEntityPersister(String entityName)
+   at NHibernate.Impl.SessionImpl.GetEntityPersister(String entityName, Object obj)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at Abp.Domain.Repositories.NHibernate.NhRepositoryBase`2.Insert(TEntity entity)
+   at Castle.Proxies.SiteUsageInfoRepositoryProxy.Insert_callback(SiteUsageInfo entity)
+   at Castle.Proxies.Invocations.NhRepositoryBase`2_Insert.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.NHibernate.NhUnitOfWorkInterceptor.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.SiteUsageInfoRepositoryProxy.Insert(SiteUsageInfo entity)
+   at AbpWebSite.Web.Controllers.TemplatesController.WriteInfo(String action, String details) in d:\Halil\GitHub\aspnetboilerplate-website\src\AbpWebSite\AbpWebSite.Web\Controllers\TemplatesController.cs:line 61
+ERROR 2014-04-30 20:55:16,607 [12   ] Site.Web.Controllers.TemplatesController - No persister for: AbpWebSite.Logging.SiteUsageInfo
+NHibernate.MappingException: No persister for: AbpWebSite.Logging.SiteUsageInfo
+   at NHibernate.Impl.SessionFactoryImpl.GetEntityPersister(String entityName)
+   at NHibernate.Impl.SessionImpl.GetEntityPersister(String entityName, Object obj)
+   at NHibernate.Event.Default.AbstractSaveEventListener.SaveWithGeneratedId(Object entity, String entityName, Object anything, IEventSource source, Boolean requiresImmediateIdAccess)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.SaveWithGeneratedOrRequestedId(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.EntityIsTransient(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveEventListener.PerformSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Event.Default.DefaultSaveOrUpdateEventListener.OnSaveOrUpdate(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.FireSave(SaveOrUpdateEvent event)
+   at NHibernate.Impl.SessionImpl.Save(Object obj)
+   at Abp.Domain.Repositories.NHibernate.NhRepositoryBase`2.Insert(TEntity entity)
+   at Castle.Proxies.SiteUsageInfoRepositoryProxy.Insert_callback(SiteUsageInfo entity)
+   at Castle.Proxies.Invocations.NhRepositoryBase`2_Insert.InvokeMethodOnTarget()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.NHibernate.NhUnitOfWorkInterceptor.Intercept(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.SiteUsageInfoRepositoryProxy.Insert(SiteUsageInfo entity)
+   at AbpWebSite.Web.Controllers.TemplatesController.WriteInfo(String action, String details) in d:\Halil\GitHub\aspnetboilerplate-website\src\AbpWebSite\AbpWebSite.Web\Controllers\TemplatesController.cs:line 61
+DEBUG 2014-04-30 20:59:24,020 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-04-30 20:59:24,534 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,704 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,705 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,762 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,762 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteCoreModule, AbpWebSite.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,767 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteApplicationModule, AbpWebSite.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,768 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteNHibernateModule, AbpWebSite.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,796 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteWebApiModule, AbpWebSite.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,824 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.Web.AbpWebSiteWebModule, AbpWebSite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 20:59:24,903 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.
+DEBUG 2014-04-30 21:00:15,194 [1    ] Abp.Modules.AbpModuleLoader              - Loading Abp modules...
+DEBUG 2014-04-30 21:00:15,702 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Application.AbpApplicationModule, Abp.Application, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,883 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Infrastructure.NHibernate.AbpNHibernateModule, Abp.Infrastructure.NHibernate, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,883 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Startup.Web.AbpWebModule, Abp.Web, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,943 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: Abp.Web.Mvc.Startup.AbpWebMvcModule, Abp.Web.Mvc, Version=0.1.8.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,943 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteCoreModule, AbpWebSite.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,948 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteApplicationModule, AbpWebSite.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,949 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteNHibernateModule, AbpWebSite.Infrastructure.NHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,949 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.AbpWebSiteWebApiModule, AbpWebSite.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:15,979 [1    ] Abp.Modules.AbpModuleLoader              - Loaded module: AbpWebSite.Web.AbpWebSiteWebModule, AbpWebSite.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-04-30 21:00:16,062 [1    ] Abp.Modules.AbpModuleLoader              - 9 modules loaded.

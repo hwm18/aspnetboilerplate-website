@@ -359,6 +359,10 @@
       <Project>{edf5d964-4c0f-4f19-b674-58a38a5e5401}</Project>
       <Name>AbpWebSite.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AbpWebSite.Core\AbpWebSite.Core.csproj">
+      <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
+      <Name>AbpWebSite.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AbpWebSite.Infrastructure.NHibernate\AbpWebSite.Infrastructure.NHibernate.csproj">
       <Project>{5b9b8451-736c-41f8-ad7e-d7e6885964ba}</Project>
       <Name>AbpWebSite.Infrastructure.NHibernate</Name>

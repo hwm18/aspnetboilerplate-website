@@ -9,7 +9,7 @@ namespace AbpWebSite.DbMigrations
         {
             get
             {
-                return "MyAppVersionInfo";
+                return "AbpWebVersionInfo";
             }
         }
     }

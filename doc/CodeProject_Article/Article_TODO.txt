@@ -1,7 +1,8 @@
-- Makalenin 3. versiyonunu hazırla
++ Makalenin 3. versiyonunu hazırla
 - Makalenin 1. versiyonunu kontrol et, düzenle
 - ABP 0.2.0'ı tamamla, nuget'e yükle.
 - Abp.com'u düzenle. Template'ler kaç kez kullanıldı say.
 - Sample projeleri ve template'leri update et (Abp.com'da da)
 - Sample projeyi ziple ve paylaş makaleyle, github linkini de ver
+- Taskever projesini ayağa kaldır, makalede de bahsetsek iyi olabilir!
 --> 05.05.2014: Makalenin 1. versiyonunu yayınla.

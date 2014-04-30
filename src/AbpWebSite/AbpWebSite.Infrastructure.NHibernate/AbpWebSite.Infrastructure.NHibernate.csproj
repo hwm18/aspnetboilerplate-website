@@ -72,8 +72,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbMigrations\V20140430\_20140430_01_CreateSiteUsageInfos.cs" />
     <Compile Include="DbMigrations\VersionTable.cs" />
     <Compile Include="AbpWebSiteNHibernateModule.cs" />
+    <Compile Include="NHibernate\EntityMappings\SiteUsageInfoMap.cs" />
+    <Compile Include="NHibernate\Repositories\SiteUsageInfoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,10 +89,7 @@
       <Name>AbpWebSite.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NHibernate\EntityMappings\" />
-    <Folder Include="NHibernate\Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
