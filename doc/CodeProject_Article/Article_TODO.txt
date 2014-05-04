@@ -1,8 +1,14 @@
 + Makalenin 3. versiyonunu hazýrla
-- Makalenin 1. versiyonunu kontrol et, düzenle
-- ABP 0.2.0'ý tamamla, nuget'e yükle.
-- Abp.com'u düzenle. Template'ler kaç kez kullanýldý say.
-- Sample projeleri ve template'leri update et (Abp.com'da da)
-- Sample projeyi ziple ve paylaþ makaleyle, github linkini de ver
-- Taskever projesini ayaða kaldýr, makalede de bahsetsek iyi olabilir!
---> 05.05.2014: Makalenin 1. versiyonunu yayýnla.
++ Abp.com'u düzenle. Template'ler kaç kez kullanýldý say.
++ Taskever projesini ayaða kaldýr
++ Taskever görüntüsünü makaleye mi koysak?
++ ABP 0.2.0'ý tamamla, nuget'e yükle (kaldýrabiliriz: SoftDelete in repositories).
++ Sample projeyi ziple ve paylaþ makaleyle, github linkini de ver
++ Sample projeyi update et
++ Makalenin 1. versiyonunu son kontrol et
+
+Introduction to ASP.NET Boilerplate
+ASP.NET Boilerplate is a starting point for new modern web applications using best practices and most popular tools
+
+- Template'leri update et
+--- Örnek projeyi nasýl çalýþtýracaðýmýzý yazalým!

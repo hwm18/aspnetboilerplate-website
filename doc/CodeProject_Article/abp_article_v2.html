@@ -1,3 +1,13 @@
+<ul class="download">
+<li><a href="SimpleTaskSystemSPA.zip">Download sample application</a> (or get latest 
+from <a href="https://github.com/aspnetboilerplate/aspnetboilerplate-samples">github</a>)</li>
+</ul>
+
+<p>
+<a href="http://www.taskever.com" target="_blank"><img alt="Taskever - Made with ASP.NET Boilerplate" src="taskever.png" style="max-width: 100%;" border="0"></a></p><p>
+<i>A comprehensive application made using <strong>ASP.NET Boilerplate</strong>. See: <a href="http://www.taskever.com" target="_blank">http://www.<b>taskever</b>.com</a></i>
+</p>
+
 <h2>Contents</h2>
 <ul>
     <li><a href="#Introduction">Introduction to the problem</a></li>
@@ -89,7 +99,7 @@
 </ul>
 
 <p>
-    Beside these common infrastructure, the &quot;Core Module&quot; is being developed. It will provide an role and permission based <strong>authorization</strong> system (implementing ASP.NET Identity Framework), a <strong>setting</strong> systems and so on.</p>
+    Beside these common infrastructure, the &quot;Core Module&quot; is being developed. It will provide a role and permission based <strong>authorization</strong> system (implementing ASP.NET Identity Framework), a <strong>setting</strong> systems and so on.</p>
 
 <h2 id="WhatAbpIsNot">
     What ASP.NET Boilerplate is not?</h2>
@@ -401,7 +411,7 @@ public class TaskRepository : NhRepositoryBase&lt;Task, long&gt;, ITaskRepositor
     GetAllPeopleOutput GetAllPeople();
 }</pre>
 <p>
-    All application services implements <strong>IApplicationService </strong>by convention. It ensures <strong>dependency injection </strong>and provides some built-in features of ABP (like validation). I defined only one method <strong>GetAllPeople()</strong> and it returns a DTO named <strong>GetAllPeopleOutput</strong>. I name DTOs as like that: <strong>method name </strong>plus <strong>Input </strong>or <strong>Output </strong>postfix. See <strong>GetAllPeopleOutput </strong>class:
+    All application services implement <strong>IApplicationService </strong>by convention. It ensures <strong>dependency injection </strong>and provides some built-in features of ABP (like validation). I defined only one method <strong>GetAllPeople()</strong> and it returns a DTO named <strong>GetAllPeopleOutput</strong>. I name DTOs as like that: <strong>method name </strong>plus <strong>Input </strong>or <strong>Output </strong>postfix. See <strong>GetAllPeopleOutput </strong>class:
 </p>
 <pre>public class GetAllPeopleOutput : IOutputDto
 {
@@ -560,7 +570,8 @@ public class TaskRepository : NhRepositoryBase&lt;Task, long&gt;, ITaskRepositor
     .Build();
 
 DyanmicApiControllerBuilder
-    .For&lt;IPersonAppService&gt;("tasksystem/pers    .Build();</pre>
+    .For&lt;IPersonAppService&gt;("tasksystem/person")
+    .Build();</pre>
 <p>
     Thus, all methods of task and person application services are exposed to clients using ASP.NET Web API (ABP&#39;s Fluent dynamic controller API supports hiding a method from Web API, try it yourself). In the Presentation Layer section, we will see how to call these Web API controllers with ABP&#39;s <strong>dynamic javascript proxies</strong>.
 </p>
@@ -606,7 +617,7 @@ DyanmicApiControllerBuilder
     <img alt="A screenshot of 'Simple Task System'" width="596" height="263" src="tasksystem.png" /></p>
 <p>
     Let me to start with the view model. A <strong>ViewModel</strong> is used to communicate with the server to perform user actions (listing tasks, changing combobox, clicking the icon to change status of the task) and provide a model to show in the view.</p>
-<pre lang="js">define(['service!tasksystem/task'],ask'],
+<pre lang="js">define(['service!tasksystem/task'],
     function (taskService) {
 
         return function () {
@@ -654,13 +665,13 @@ DyanmicApiControllerBuilder
 <p>
     Second parameter of define function is the module itself. It should be a function that defines the module. It&#39;s parameters are automatically filled by Durandal using your dependency list.</p>
 <p>
-    <strong>that.tasks </strong>is a <strong>knockout observable array</strong>. It&#39;s created using <strong>knockout.mapping</strong> function. <strong>that.localize</strong> is used to get a function to be used to localize in javascript. It&#39;s a feature of ABP to localize texts dynamically in javascript (Will be detailed in Localization section). <strong>that.selectedTaskState State </strong>is an <strong>observable </strong>that is binded to the combobox to show all/active/completed tasks.</p>
+    <strong>that.tasks </strong>is a <strong>knockout observable array</strong>. It&#39;s created using <strong>knockout.mapping</strong> function. <strong>that.localize</strong> is used to get a function to be used to localize in javascript. It&#39;s a feature of ABP to localize texts dynamically in javascript (Will be detailed in Localization section). <strong>that.selectedTaskState </strong>is an <strong>observable </strong>that is binded to the combobox to show all/active/completed tasks.</p>
 <p>
     <strong>activate</strong> is a special function of Durandal. This function is called automatically by Durandal when this view is activated. So, we can write some codes to run when user enters the view.</p>
 <p>
     In the <strong>refreshTasks </strong>method, I called <strong>Task Application Service</strong>&#39;s <strong>getTasks</strong> method to load tasks from server. To call an application service from javascript is that easy through ABP&#39;s dynamic Web API controller and dynamic <strong>javascript client proxies</strong>. getTasks function gets same arguments of <strong>TaskAppService.GetTasks</strong>. The function will return a jQuery <strong>promise</strong>, so you can write a <strong>done </strong>handler to get <strong>return value</strong>  the GetTasks method of the task application service. taskService.getTasks javascript call also handles errors and show error message to the user if needed. If your done handler is called, you can be sure that there is no error. In the done handler, I added retrived tasks to the that.task observable array.</p>
 <p>
-    <strong>changeTaskState State </strong>is also pretty similar. It&#39;s used to change a task&#39;s state from <strong>active </strong>to <strong>completed </strong>or vice verse. In the done handler, you see the usage of <strong>localization</strong>. See Localization section for details.</p>
+    <strong>changeTaskState </strong>is also pretty similar. It&#39;s used to change a task&#39;s state from <strong>active </strong>to <strong>completed </strong>or vice verse. In the done handler, you see the usage of <strong>localization</strong>. See Localization section for details.</p>
 <p>
     Like a ViewModel is a javascript file, a View is an HTML file. In this HTML file, you can bind ViewModel into HTML elements. ASP.NET Boilerplates moves this one step further by allowing to define Views as <strong>Razor Views</strong>: dynamic <strong>cshtml </strong>files instead of&nbsp; static <strong>html </strong>files. Thus, you can write C# code to create views. See the <strong>tasklist view</strong>:</p>
 <pre lang="html">&lt;div class=&quot;panel panel-default&quot;&gt;
@@ -692,9 +703,9 @@ DyanmicApiControllerBuilder
 &lt;/div&gt;</pre>
 <p>This view is simply designed to work with Twitter Bootstrap. CSS classes are bootstrap&#39;s classes. But this is not important. There are two important points here:</p>
 <p>
-    <strong>First</strong>: We can use <strong>@L(&quot;TaskList&quot;)quot;)</strong> to get a localized string. <strong>L</strong> method is defined in <strong>AbpWebViewPage</strong> class (See SimpleTaskSystemWebViewPageBase class that is derived from AbpWebViewPage). You can use <strong>L</strong> shortcut of <strong>LocalizationHelper.GetString(...)</strong> in views (See Localization section for details). Since this is a Razor View, we can directly use C# code in the view. Thus, we can create dynamic HTML in the server side. Remember that this View will be loaded only one time since this is a SPA!</p>
+    <strong>First</strong>: We can use <strong>@L(&quot;TaskList&quot;)</strong> to get a localized string. <strong>L</strong> method is defined in <strong>AbpWebViewPage</strong> class (See SimpleTaskSystemWebViewPageBase class that is derived from AbpWebViewPage). You can use <strong>L</strong> shortcut of <strong>LocalizationHelper.GetString(...)</strong> in views (See Localization section for details). Since this is a Razor View, we can directly use C# code in the view. Thus, we can create dynamic HTML in the server side. Remember that this View will be loaded only one time since this is a SPA!</p>
 <p>
-    <strong>Second</strong>: We can use fields of the javascript ViewModel using knockout <strong>data-bind -bind </strong>atribute (like data-bind=&quot;<strong>foreach: tasks</strong>&quot;) and other javascript methods (like <strong>abp.utils.formatString</strong>). Thus, we can create dynamic HTML in the client side. See &quot;<strong>click: $parent.changeTaskState</strong>&quot;, this is used to bind click event of the icon to the <strong>changeTaskState </strong>function in the javascript ViewModel code. As similar, we&#39;re binding <strong>change </strong>event of the <strong>combobox </strong>to <strong>refreshTasks </strong>function. For more information, see <strong>knockout.js</strong> web site.</p>
+    <strong>Second</strong>: We can use fields of the javascript ViewModel using knockout <strong>data-bind </strong>atribute (like data-bind=&quot;<strong>foreach: tasks</strong>&quot;) and other javascript methods (like <strong>abp.utils.formatString</strong>). Thus, we can create dynamic HTML in the client side. See &quot;<strong>click: $parent.changeTaskState</strong>&quot;, this is used to bind click event of the icon to the <strong>changeTaskState </strong>function in the javascript ViewModel code. As similar, we&#39;re binding <strong>change </strong>event of the <strong>combobox </strong>to <strong>refreshTasks </strong>function. For more information, see <strong>knockout.js</strong> web site.</p>
 <h4 id="PresentNewTask">
     New task</h4>
 <p>
@@ -780,7 +791,7 @@ DyanmicApiControllerBuilder
 <p>
     <img alt="Localization files" width="307" height="142" src="localization_files.png" /></p>
 <p>
-    Here, the content of the SimpleTaskSystem.xml:m.xml:</p>
+    Here, the content of the SimpleTaskSystem.xml:</p>
 <pre lang="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
 &lt;localizationDictionary culture=&quot;en&quot;&gt;
   &lt;texts&gt;
@@ -809,7 +820,7 @@ DyanmicApiControllerBuilder
     }
 }</pre>
 <p>
-    A localization source must be a <strong>unique name</strong> (SimpleTaskSystem in this project). Thus, different sources (stored in different format and data sources) can be used in the application. XmlLocalizationSource also needs a folder (<strong>/Localization/SimpleTaskSystem </strong>in this project) to read localization files. Lastly, we must register this class to <strong>ABP localization system ystem </strong>before use it:</p>
+    A localization source must be a <strong>unique name</strong> (SimpleTaskSystem in this project). Thus, different sources (stored in different format and data sources) can be used in the application. XmlLocalizationSource also needs a folder (<strong>/Localization/SimpleTaskSystem </strong>in this project) to read localization files. Lastly, we must register this class to <strong>ABP localization system </strong>before use it:</p>
 <pre lang="cs">LocalizationHelper.RegisterSource&lt;SimpleTaskSystemLocalizationSource&gt;();</pre>
 <p>
     Then we can get localized texts when we need. In C#, we have two option to get a localizaed text:</p>
@@ -826,7 +837,8 @@ var s2 = source.GetString("NewTask");
 var s1 = abp.localization.localize('NewTask', 'SimpleTaskSystem');
 
 //Use after get source
-var source = abp.localization.getSource('SimpleTaskSystevar s2 = source('NewTask');
+var source = abp.localization.getSource('SimpleTaskSystem');
+var s2 = source('NewTask');
 </pre>
 <p>
     These methods also get the localized text in the <strong>current language</strong>.</p>
