@@ -168,7 +168,9 @@
     <Content Include="Abp\Framework\styles\abp.css" />
     <Content Include="Abp\Framework\styles\abp.min.css" />
     <Content Include="Abp\Framework\styles\utils\ie10fix.css" />
-    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.css">
+      <DependentUpon>toastr.scss</DependentUpon>
+    </Content>
     <Content Include="Content\toastr.min.css" />
     <Content Include="css\main.css">
       <DependentUpon>main.less</DependentUpon>
@@ -279,6 +281,9 @@
     <Content Include="Abp\Framework\styles\abp.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Content\toastr.css.map">
+      <DependentUpon>toastr.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Publish_Release.pubxml" />
     <Content Include="Scripts\jquery-ui-1.10.4.js" />
     <Content Include="Scripts\jquery-ui-1.10.4.min.js" />

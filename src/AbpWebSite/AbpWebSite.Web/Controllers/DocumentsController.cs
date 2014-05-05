@@ -10,8 +10,8 @@ namespace AbpWebSite.Web.Controllers
     {
         public ActionResult Index()
         {
-            //return View();
-            return RedirectToAction("IntroductionWithSimpleTaskSystem");
+            return View();
+            //return RedirectToAction("IntroductionWithSimpleTaskSystem");
         }
 
         public ActionResult IntroductionWithSimpleTaskSystem()
