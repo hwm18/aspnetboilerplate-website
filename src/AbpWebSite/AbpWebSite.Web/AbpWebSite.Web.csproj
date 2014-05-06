@@ -329,6 +329,7 @@
     <Compile Include="Controllers\DocumentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\AbpWebSiteControllerBase.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
     <Compile Include="Controllers\TemplatesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -349,6 +350,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Documents\IntroductionWithSimpleTaskSystem.cshtml" />
     <Content Include="Scripts\toastr.min.js.map" />
+    <Content Include="Views\Pages\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -375,6 +377,14 @@
     <ProjectReference Include="..\AbpWebSite.WebApi\AbpWebSite.WebApi.csproj">
       <Project>{5eb52d3d-09fd-463a-b02a-8d9856bd3724}</Project>
       <Name>AbpWebSite.WebApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS\Abp.Modules.Cms.Application\Abp.Modules.Cms.Application.csproj">
+      <Project>{CC635B4D-9C71-4F76-8DEE-8DAA49F69BB2}</Project>
+      <Name>Abp.Modules.Cms.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS\Abp.Modules.Cms.Infrastructure.NHibernate\Abp.Modules.Cms.Infrastructure.NHibernate.csproj">
+      <Project>{5C46C416-DD55-4337-BADF-5D81C5774D40}</Project>
+      <Name>Abp.Modules.Cms.Infrastructure.NHibernate</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

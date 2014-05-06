@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Abp.Cms;
 using Abp.Dependency;
 using Abp.Localization;
 using Abp.Modules;
@@ -18,7 +19,9 @@ namespace AbpWebSite.Web
                    {
                        typeof(AbpWebSiteNHibernateModule),
                        typeof(AbpWebSiteApplicationModule),
-                       typeof(AbpWebSiteWebApiModule)
+                       typeof(AbpWebSiteWebApiModule),
+                       typeof(AbpWebSiteApplicationModule),
+                       typeof(AbpCmsNHibernateModule)
                    };
         }
 

@@ -21,6 +21,13 @@ namespace AbpWebSite.Web
                 defaults: new { id = RouteParameter.Optional }
                 );
 
+            //TODO@Halil: Move to CMS system
+            routes.MapRoute(
+                name: "CmsPageRoute",
+                url: "Pages/{pageName}",
+                defaults: new { controller = "Pages", action = "Index" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

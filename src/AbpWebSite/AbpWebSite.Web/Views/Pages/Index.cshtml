@@ -1,0 +1,8 @@
+﻿@model Abp.Modules.Cms.Application.Cms.Contents.Dtos.ContentDto
+@{
+    ViewBag.CurrentPage = "Documents"; //TODO@Halil: Change it
+    ViewBag.Title = Model.Title;
+}
+<div>
+    @Html.Raw(Model.Text)
+</div>
